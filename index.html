@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taxi Cash App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.7.1/dist/umd/index.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Taxi Cash App</h1>
+    <div id="walletSelection">
+      <select id="walletSelector">
+        <option value="">Select your wallet</option>
+        <option value="celo">Celo Extension Wallet</option>
+        <option value="walletconnect">WalletConnect (for mobile)</option>
+      </select>
+      <button id="connectWalletButton" disabled>Connect Wallet</button>
+    </div>
+    <button id="disconnectButton" style="display: none;">Disconnect Wallet</button>
+    <p id="status">Not connected</p>
+    <div id="roleSelection" style="display: none;">
+      <button id="taxiButton">I'm a Taxi Driver</button>
+      <button id="passengerButton">I'm a Passenger</button>
+    </div>
+    <div id="taxiInfo" style="display: none;">
+      <h2>Your QR Code:</h2>
+      <div id="qrcode"></div>
+    </div>
+    <div id="passengerInfo" style="display: none;">
+      <button id="scanQRButton">Scan QR Code</button>
+      <div id="qrReader" style="display: none;"></div>
+      <p>Or enter address manually:</p>
+      <input type="text" id="recipient" placeholder="Recipient Address">
+      <input type="number" id="amount" placeholder="Amount in CELO">
+      <button id="sendButton">Send Payment</button>
+    </div>
+    <div id="accountInfo" style="display: none;">
+      <p>Account: <span id="account"></span></p>
+      <p>Balance: <span id="balance"></span> CELO</p>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
